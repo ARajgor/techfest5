@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    require "page_navbar.php";
-?>
-<head>
 
+<head>
   
     <meta charset="utf-8">
     <title>Tech-Pulse || 2022-23</title>
@@ -57,7 +54,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/jquery.webui-popover.css"/>
-	<!-- <link rel="stylesheet" href="techfest4-master/css/style.css"> -->
+	<link rel="stylesheet" href="techfest4-master/css/style.css">
 	<!-- <link rel="stylesheet" href="css/style.css"/> -->
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
 			
@@ -106,7 +103,9 @@
 	
 	<!-- custom font -->
 	<link rel="stylesheet" href="css/font-style.css" type="text/css">
-
+    <?php
+    require "page_navbar.php";
+    ?>
     <style>
 
         /*
@@ -411,7 +410,7 @@
 
     .logo {
         position: absolute;
-        top: 13px;
+        top: 22px;
         left: 40px;
         display: block;
         z-index: 3002;
@@ -762,7 +761,6 @@
         background-repeat: no-repeat;
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear; 
-        margin-top:13px;
     }
     .content__close:hover:before {
         left: -100%;
@@ -775,14 +773,13 @@
         left: 100%;
         width: 100%;
         height: 100%;
-        opacity: 1;
+        opacity: 0;
         background-image: url('img/arrow.svg');
         background-size: 48px 48px;
         background-position: center center;
         background-repeat: no-repeat;
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear; 
-        margin-top:13px;
     }
     .content__close:hover:after {
         left: 0;
@@ -865,7 +862,7 @@
         display: flex;
         flex-direction: column;
         margin: 0 10vw 0 0;
-        /* font-size: 1vw; */
+        font-size: 1vw;
         padding: 0;
         margin-top: -50px;
         margin-right: 300px;
@@ -1733,7 +1730,7 @@
         .scene .blob-4,
         .scene .blob-5,
         .scene .blob-6{
-            /* opacity: 0; */
+            opacity: 0;
         }
         .content__inner {
             background-color: #111;
@@ -1757,7 +1754,7 @@
         }
         .menu {
             margin: 0 0 0 0;
-            /* font-size: 4vw; */
+            font-size: 4vw;
             margin-top: -160px;
             align-items: center;
         }
@@ -1777,7 +1774,7 @@
 
     @media (max-width: 767px) {
         .menu {
-            /* font-size: 6vw; */
+            font-size: 6vw;
         }
         .menu__item {
             margin: 5px 0;
@@ -2765,16 +2762,15 @@
         position: relative;
         z-index: 4;
         display: flex;
-        /* flex-direction: column; */
-        /* margin-right: 400px; */
-        /* font-size: 2vw; */
-        font-size: 30px;
+        flex-direction: column;
+        margin-right: 400px;
+        font-size: 2vw;
         padding: 0;
         margin-top: -50px;
         align-items: flex-start;
     }
 
-        /* .menuu {
+        .menuu {
         position: relative;
         z-index: 4;
         display: flex;
@@ -2784,7 +2780,7 @@
         padding: 0;
         margin-top: -50px;
         align-items: flex-start;
-    } */
+    }
 
     /* -------------------------------------------------- 
         design for 480px
@@ -3757,7 +3753,7 @@
                             </header> -->
                     
                                 
-                            <div class="content">
+                                <div class="content">
                                         <nav class="menu">
                                             <a href="#" class="menu__item">Technical<div class="empty-space">-</div>Event</a>
                                             <a href="#" class="menu__item">Partial <div class="empty-space">-</div>Technical<div class="empty-space">-</div>Event</a>
@@ -3844,8 +3840,7 @@
                                             <path d="M 1324,301.4 C 1346,310.6 1377,312.3 1400,297 1414,287.4 1415,271 1411,256.5 1399,221.9 1422,183.4 1434,146.7 1448,101.5 1474,57.24 1473,10.72 1472,-13.48 1442,-25.38 1416,-19.85 1394,-14.87 1375,4.724 1369,25.13 1358,62.76 1318,89.1 1296,124.5 1277,153.2 1258,185.1 1262,216.9 1266,249.7 1288,274.2 1312,294.3 1316,297.7 1320,300.1 1324,301.4 Z" class="M 422.1,981.2 C 700,1036 1092,1046 1382,955.1 1559,898 1571,800.5 1521,714.2 1369,508.5 1660,279.6 1811,61.38 1988,-207.4 2317,-470.6 2304,-747.2 2291,-891.1 1912,-961.8 1584,-928.9 1306,-899.3 1066,-782.8 990.5,-661.5 851.5,-437.7 346.3,-281.1 68.48,-70.62 -171.5,100 -411.5,289.7 -360.9,478.8 -310.4,673.8 -32.56,819.5 270.6,939 321.1,959.2 371.6,973.5 422.1,981.2 Z"/>
                                         </g>
                                     </svg>
-                                
-                            </div>
+                                </div>
                                 
                                 <!-- Primary Page Layout
                                 ================================================== -->
