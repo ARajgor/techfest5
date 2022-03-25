@@ -70,6 +70,9 @@ if ($success === true)
 
             $result = mysqli_query($connect, $sql);
 
+            $sql = "INSERT INTO `user_entry_pass` (`user_id`, `mail`) VALUES ('$user_name', '$mail')";
+            $result = mysqli_query($connect, $sql);
+
             header("location: index.php");
         }
         else

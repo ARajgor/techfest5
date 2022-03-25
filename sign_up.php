@@ -182,6 +182,25 @@ strong {
             }
         }
 
+        $sql = "SELECT * FROM `user`";
+        $result = mysqli_query($connect, $sql);
+        $row = mysqli_num_rows($result);
+        if($row != 0)
+        {
+            while($r = mysqli_fetch_assoc($result))
+            {
+                $temp_mail = $r['mail'];
+                if($temp_mail == $mail)
+                {
+                    echo  '<script type ="text/JavaScript">
+                    alert("this mail is already used");
+                   </script>'; 
+    
+                   $flag = 1;
+                }
+            }
+        }
+
         if($flag == 0)
         {
             include "database_connection.php";

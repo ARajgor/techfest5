@@ -11,7 +11,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
             $uid_leader = $_SESSION['user_id'];
             $uid_member2 = $_POST['uid_member2'];
+            $uid_member2 = str_replace("<","&lt;","$uid_member2");
+            $uid_member2= str_replace(">", "&gt;", "$uid_member2");
+
             $uid_member3 = $_POST['uid_member3'];
+            $uid_member3 = str_replace("<","&lt;","$uid_member3");
+            $uid_member3= str_replace(">", "&gt;", "$uid_member3");
+
             $event = $_POST['event'];
 
             $sql = "SELECT user_id FROM `user`";

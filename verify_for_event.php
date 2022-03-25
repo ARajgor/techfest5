@@ -69,6 +69,9 @@ if ($success === true)
             $sql = "INSERT INTO `event_purchased` (`user_id`,`payment_id`) VALUES ('$user_name', '$payment_id')";
             $result = mysqli_query($connect, $sql);
             header("location: index.php");
+
+            $sql = "INSERT INTO `user_entry_pass` (`user_id`, `mail`) VALUES ('$user_name', '$mail')";
+            $result = mysqli_query($connect, $sql);
         }
         else
         {
