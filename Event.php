@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    require "page_navbar.php";
-?>
+
 <head>
 
 
@@ -107,6 +105,9 @@
 	<!-- custom font -->
 	<link rel="stylesheet" href="css/font-style.css" type="text/css">
 
+    <?php
+    require "page_navbar.php";
+    ?>
 </head>
 
 <style>
