@@ -51,7 +51,38 @@
 	
 	<!-- custom font -->
 	<link rel="stylesheet" href="css/font-style.css" type="text/css">
+
+    
+
 </head>
+
+<?php
+ if($_SERVER['REQUEST_METHOD'] == 'POST')
+ {
+     $name = $_POST['name'];
+     $email = $_POST['email'];
+     $subject = $_POST['subject'];
+     $message = $_POST['message'];
+
+     $name = str_replace("<","&lt;","$name");
+     $name= str_replace(">", "&gt;", "$name");
+
+     $email = str_replace("<","&lt;","$email");
+     $email= str_replace(">", "&gt;", "$email");
+
+     $subject = str_replace("<","&lt;","$subject");
+     $subject= str_replace(">", "&gt;", "$subject");
+
+     $message = str_replace("<","&lt;","$message");
+     $message= str_replace(">", "&gt;", "$message");
+
+     require "database_connection.php";
+
+     $sql = "INSERT INTO `contact_us` (`name`, `email`, `subject`, `message`) VALUES ('$name','$email','$subject','$message')";
+     $result = mysqli_query($connect, $sql);
+
+ }
+?>
 
 <body id="homepage">
 
@@ -283,41 +314,18 @@ So call your friends, mark your calendars, and gear up for Tech-Pulse 2022-23.
 			
 			<!-- section begin -->
             <section id="section-speakers" class="text-light" data-bgimage="url(images-event/bg/1.jpg) fixed top center" data-stellar-background-ratio=".2">
-				<div class="wm wm-border dark wow fadeInDown">speakers</div>
+				<div class="wm wm-border dark wow fadeInDown">WS</div>
                 <div class="container">
                     <div class="row">
 						<div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                            <h1>The Speakers</h1>
+                            <h1>Special Workshops</h1>
                             <div class="separator"><span><i class="fa fa-square"></i></span></div>
                             <div class="spacer-single"></div>
                         </div>
 						
 						<div class="clearfix"></div>
                       
-                       <div class="col-lg-3 col-md-6">
-							<!-- team member -->
-							<div class="de-team-list">
-								<div class="team-pic">
-									<!-- <img src="" class="img-responsive" alt=""  /> -->
-								</div>
-								<div class="team-desc">
-									<!-- <h3>John Smith</h3>
-									<p class="lead">Expert Designer</p>
-									<div class="small-border"></div>
-									<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-									<div class="social">
-										<a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-										<a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-										<a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-										<a href="#"><i class="fa fa-skype fa-lg"></i></a>
-									</div> -->
-								</div>
-							</div>
-							<!-- team close -->
-						</div>
-						
-						<div class="col-lg-3 col-md-6">
+                       <div class="col-lg col-md">
 							<!-- team member -->
 							<div class="de-team-list">
 								<div class="team-pic">
@@ -339,7 +347,53 @@ So call your friends, mark your calendars, and gear up for Tech-Pulse 2022-23.
 							<!-- team close -->
 						</div>
 						
-						<div class="col-lg-3 col-md-6">
+						
+
+                        <div class="col-lg-3 col-md-3">
+							<!-- team member -->
+							<div class="de-team-list">
+								<div class="team-pic">
+									<img src="images-event/team/Savji-Dholakiya.webp" class="img-responsive" alt="" />
+								</div>
+								<div class="team-desc">
+									<h3>Savaji Dholakia</h3>
+									<p class="lead">Business-Man</p>
+									<div class="small-border"></div>
+									<p>Savji Dhanji Dholakia is an Indian businessman. He is the founder and chairman of Hari Krishna Exports. He was awarded the Padma Shri in 2022.</p>
+
+									<div class="social">
+										<a href="https://www.facebook.com/dholakiasavji"><i class="fa fa-facebook fa-lg"></i></a>
+										<a href="https://twitter.com/savjidholakia"><i class="fa fa-twitter fa-lg"></i></a>
+										<a href="https://www.instagram.com/savjidholakia/"><i class="fa fa-instagram fa-lg"></i></a>
+									</div>
+								</div>
+							</div>
+							<!-- team close -->
+						</div>
+
+                        <div class="col-lg-3 col-md-3">
+							<!-- team member -->
+							<div class="de-team-list">
+								<div class="team-pic">
+									<img src="images-event/team/Savji-Dholakiya.webp" class="img-responsive" alt="" />
+								</div>
+								<div class="team-desc">
+									<h3>Savaji Dholakia</h3>
+									<p class="lead">Business-Man</p>
+									<div class="small-border"></div>
+									<p>Savji Dhanji Dholakia is an Indian businessman. He is the founder and chairman of Hari Krishna Exports. He was awarded the Padma Shri in 2022.</p>
+
+									<div class="social">
+										<a href="https://www.facebook.com/dholakiasavji"><i class="fa fa-facebook fa-lg"></i></a>
+										<a href="https://twitter.com/savjidholakia"><i class="fa fa-twitter fa-lg"></i></a>
+										<a href="https://www.instagram.com/savjidholakia/"><i class="fa fa-instagram fa-lg"></i></a>
+									</div>
+								</div>
+							</div>
+							<!-- team close -->
+						</div>
+						
+						<div class="col-lg-3 col-md-3">
 							<!-- team member -->
 							<div class="de-team-list">
 								<div class="team-pic">
@@ -575,325 +629,14 @@ So call your friends, mark your calendars, and gear up for Tech-Pulse 2022-23.
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-
-                                    <!-- <div id="tab3" class="tab_single_content dark">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">08:00 - 12:00 AM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Michael Dennis</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>The Secret of Great App Design</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">12:00 - 14:00 PM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Sarah Michelle</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Use Design Thinking in Your Everyday Routine</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">16:00 - 18:00 PM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Katty Wilson</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Design Into The Real World</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">20:00 - 22:00 AM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Rose Shipp</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Advanced Design Implementation</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div id="tab4" class="tab_single_content dark">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">08:00 - 12:00 AM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Isaac Nicholas</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Advanced Design Implementation 2</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">12:00 - 14:00 PM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>John Arnold</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Branding, Identity &amp; Logo Design Explained</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">16:00 - 18:00 PM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="images-event/team/1.jpg" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>John Smith</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>The Art of Personal Branding</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">20:00 - 22:00 PM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="images-event/team/2.jpg" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Michael Dennis</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>8 Secret Benefits of Branding</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div id="tab5" class="tab_single_content dark">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">08:00 - 12:00 AM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="images-event/team/1.jpg" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>John Smith</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>How To Brand A Startup On A Small Budget</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">08:00 - 12:00 AM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="images-event/team/2.jpg" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>John Smith</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Establishing a Brand Identity</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">08:00 - 12:00 AM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="images-event/team/3.jpg" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Sarah Michelle</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Interview With World Class Designer</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="schedule-listing">
-                                                    <div class="schedule-item">
-                                                        <div class="sc-time">08:00 - 12:00 AM</div>
-                                                        <div class="sc-pic">
-                                                            <img src="images-event/team/4.jpg" class="img-circle" alt="">
-                                                        </div>
-                                                        <div class="sc-name">
-                                                            <h4>Katty Wilson</h4>
-                                                            <span>Founder & CEO</span>
-                                                        </div>
-                                                        <div class="sc-info">
-                                                            <h3>Close Event Ceremony &amp; Doorprize</h3>
-                                                            <p>In this session we will discuss about digital topics in detail. You need laptops and other tech support equipment. This session will last for 2 hours. So prepare yourself.</p>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- section close -->
-			
-			<!-- section begin -->
-            <!-- <section id="section-ticket" class="text-light" data-bgimage="url(images-event/bg/2.jpg) fixed top" data-stellar-background-ratio=".2">
-                <div class="wm wm-border dark wow fadeInDown">tickets</div>
-				<div class="container">
-                    <div class="row">
-						<div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                            <h1>Choose a Ticket</h1>
-                            <div class="separator"><span><i class="fa fa-square"></i></span></div>
-                            <div class="spacer-single"></div>
-                        </div>
-
-                        <div class="col-sm-4">
-                                            <div class="pricing-s1 mb30">
-                                                <div class="top">
-                                                    <h2>Day Pass</h2>
-                                                    <p class="price"><span class="currency id-color">$</span> <b>49.99</b></p>
-                                                </div>
-                                                <div class="bottom">
-                                                    <ul>
-                                                        <li><i class="icon_check_alt2"></i>Conference Tickets</li>
-                                                        <li><i class="icon_check_alt2"></i>Free Lunch Nad Coffee</li>
-                                                        <li><i class="icon_check_alt2"></i>Certificates</li>
-                                                        <li><i class="icon_close_alt2"></i>Private Access</li>
-                                                        <li><i class="icon_close_alt2"></i>Experts Contacts</li>
-                                                    </ul>
-                                                    <a href="" class="btn btn-custom text-white">Buy Ticket</a>
-                                                </div>
-												<div class="ps1-deco"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="pricing-s1 mb30">
-                                                <div class="ribbon color-2 text-white">Recommend</div>
-                                                <div class="top">
-                                                    <h2>Full Pass</h2>
-                                                    <p class="price"><span class="currency id-color">$</span> <b>79.99</b></p>
-                                                </div>
-                                                <div class="bottom">
-                                                    <ul>
-                                                        <li><i class="icon_check_alt2"></i>Conference Tickets</li>
-                                                        <li><i class="icon_check_alt2"></i>Free Lunch Nad Coffee</li>
-                                                        <li><i class="icon_check_alt2"></i>Certificates</li>
-                                                        <li><i class="icon_check_alt2"></i>Private Access</li>
-                                                        <li><i class="icon_close_alt2"></i>Experts Contacts</li>
-                                                    </ul>
-                                                    <a href="" class="btn btn-custom text-white">Buy Ticket</a>
-                                                </div>
-												<div class="ps1-deco"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="pricing-s1 mb30">
-                                                <div class="top">
-                                                    <h2>Group Pass</h2>
-                                                    <p class="price"><span class="currency id-color">$</span> <b>139.99</b></p>
-                                                </div>
-                                                <div class="bottom">
-                                                    <ul>
-                                                        <li><i class="icon_check_alt2"></i>Conference Tickets</li>
-                                                        <li><i class="icon_check_alt2"></i>Free Lunch Nad Coffee</li>
-                                                        <li><i class="icon_check_alt2"></i>Certificates</li>
-                                                        <li><i class="icon_check_alt2"></i>Private Access</li>
-                                                        <li><i class="icon_check_alt2"></i>Experts Contacts</li>
-                                                    </ul>
-                                                    <a href="" class="btn btn-custom text-white">Buy Ticket</a>
-                                                </div>
-												<div class="ps1-deco"></div>
-                                            </div>
-                                        </div>
-
-                    </div>
-					
-                </div>
-            </section> -->
-            <!-- section close -->
+            
 			
 			<!-- section begin -->
             <section id="section-sponsors" data-bgimage="url(images-event/bg/3.png) fixed center no-repeat">
@@ -928,50 +671,90 @@ So call your friends, mark your calendars, and gear up for Tech-Pulse 2022-23.
             <!-- section close -->
 			
 			<!-- section begin -->
-            <section id="section-testimonials" aria-label="section">
-				<div class="wm wm-border dark wow fadeInDown">SOE</div>
-                <div class="row">
+            <section id="section-schedule" aria-label="section-services-tab" data-bgimage="url(images-event/bg/2.png) fixed center no-repeat">
+                <div class="wm wm-border dark wow fadeInDown ">SOE</div>
+                <div class="container">
+                    <div class="row">
                         <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                            <h1> Organise by School Of Engineering</h1>
+                            <h1>School Of Engineering</h1>
                             <div class="separator"><span><i class="fa fa-square"></i></span></div>
                             <div class="spacer-single"></div>
                         </div>
-                <div class="container">
-                    <div class="row">
 
-                        <div class="col-md-8 offset-md-2">
-                            
-							<div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp">
-								<blockquote class="testimonial-big">
-									<div class="testimonial-item text-center" data-dot=""><img src='img/ceo-profile.jpg' style="height: 130px; width: 125px; margin-left: 386px; border: 8px solid rgba(255,255,255,.15);" alt=''><br>
-                                        <h4 class="text-uppercase">Dr. Parag Sanghani</h4>
-                                        <p class="text-primary">Provost & Executive Dean</p>
-                                        <span class="fs-5">Dr. Parag Sanghani is presently the Executive Dean with P.P Savani University. He is an Endeavour Fellow from QUT, Australia and has global exposure of education system in Europe, Australia and UK and has worked with leading Universities in UAE as Head of Academics.</span>
-                                    </div>
-								</blockquote>
-								
-								<blockquote class="testimonial-big">
-									<div class="testimonial-item text-center" data-dot="" ><img src='img/NirajDShah.jpg' style="height: 130px; width: 125px; margin-left: 386px; border: 8px solid rgba(255,255,255,.15);"alt=''><br>
-                                        <h4 class="text-uppercase">Dr. Niraj D Shah</h4>
-                                        <p class="text-primary">Dean of SOE</p>
-                                        <span class="fs-5">Dr. Niraj D Shah is the Principal of the School of Engineering in P. P. Savani University. He has pursued his Ph.D. in Civil-Structural Engineering from SVNIT, Surat. Dr. Shah has an experience of 22 years including academic, administrative, industrial and research experience. He has several publications, authored books, guided Doctoral and P.G students and has been honored with numerous prestigious awards.</span>
-                                    </div>
-								</blockquote>
-								
-								<blockquote class="testimonial-big">
-                				    <div class="testimonial-item text-center" data-dot="" ><img src='img/JasleenKaur.jpg' style="height: 130px; width: 125px; margin-left: 386px; border: 8px solid rgba(255,255,255,.15);" alt=''><br>
-                                        <h4 class="text-uppercase">Dr. Jasleen Kaur</h4>
-                                        <p class="text-primary">HOD & Associate Professor</p>
-                                        <span class="fs-5">Dr. Jasleen Kaur is the Head of Department of the School of Engineering in P. P. Savani University. She has been associated with many prestigious journals as a reviewer as well as editorial member.</span>
-                                    </div>
-								</blockquote>
+                        <div class="col-md-12">
+                            <div class="de_tab tab_style_4 text-center">
+                                <ul class="de_nav de_nav_dark">
+                                    <li class="active" data-link="#section-services-tab">
+                                        <h3>Organise by</h3>
+                                        <h3>School Of Engineering</h3>
+                                    </li>
+                                    
+                                    
+                                </ul>
 
-							</div>
-							
+                                <div class="de_tab_content text-left">
+
+                                    <div id="tab1" class="tab_single_content dark">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="schedule-listing">
+                                                    <div class="schedule-item">
+                                                        <div class="sc-time"></div>
+                                                        <div class="sc-pic">
+                                                            <img src="img/ceo-profile.jpg" class="img-circle" alt="">
+                                                        </div>
+                                                        <div class="sc-name">
+                                                            <h4>Dr.Parag Sanghani</h4>
+                                                            <span>Provost & Executive Dean</span>
+                                                        </div>
+                                                        <div class="sc-info">
+                                                            <p>Dr. Parag Sanghani is presently the Executive Dean with P.P Savani University. He is an Endeavour Fellow from QUT, Australia and has global exposure of education system in Europe, Australia and UK and has worked with leading Universities in UAE as Head of Academics.<br></p>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="schedule-listing">
+                                                    <div class="schedule-item">
+                                                        <div class="sc-time"></div>
+                                                        <div class="sc-pic">
+                                                            <img src="img/NirajDShah.jpg" class="img-circle" alt="" style="height:95px ;width: 90px;">
+                                                        </div>
+                                                        <div class="sc-name">
+                                                            <h4>Dr. Niraj D Shah</h4>
+                                                            <span>Dean of SOE</span>
+                                                        </div>
+                                                        <div class="sc-info">
+                                                            <p>Dr. Niraj D Shah is the Principal of the School of Engineering in P. P. Savani University. He has pursued his Ph.D. in Civil-Structural Engineering from SVNIT, Surat. Dr. Shah has an experience of 22 years including academic, administrative, industrial and research experience. He has several publications, authored books, guided Doctoral and P.G students and has been honored with numerous prestigious awards.</p>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="schedule-listing">
+                                                    <div class="schedule-item">
+                                                        <div class="sc-time"></div>
+                                                        <div class="sc-pic">
+                                                            <img src="img/JasleenKaur.jpg" class="img-circle" alt="" style="height:95px ;width: 90px;">
+                                                        </div>
+                                                        <div class="sc-name">
+                                                            <h4>Dr. Jasleen Kaur</h4>
+                                                            <span>HOD & Associate Professor</span>
+                                                        </div>
+                                                        <div class="sc-info">
+                                                            <p>Dr. Jasleen Kaur is the Head of Department of the School of Engineering in P. P. Savani University. She has been associated with many prestigious journals as a reviewer as well as editorial member.<br><br></p>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
-					
                 </div>
             </section>
             <!-- section close -->
@@ -1083,6 +866,102 @@ So call your friends, mark your calendars, and gear up for Tech-Pulse 2022-23.
                     </div>
                 </section>
 
+                <section id="section-sponsors ftco-section" data-bgimage="url(images-event/bg/3.png) fixed center no-repeat">
+                <div class="wm wm-border dark wow fadeInDown ">Contact</div>
+                <div class="container row justify-content-center">
+                <div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section" style="color: whitesmoke;">Contact </h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="wrapper">
+						<div class="row no-gutters">
+							<div class="col-md-6 d-flex align-items-stretch">
+								<div class="contact-wrap w-100 p-md-5 p-4 py-5">
+									<h3 class="mb-4">Write us</h3>
+									<div id="form-message-warning" class="mb-4"></div> 
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div>
+									<form action="index.php" method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name" maxlength="30" require>
+												</div>
+											</div>
+											<div class="col-md-12"> 
+												<div class="form-group">
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email" maxlength="30" require>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" maxlength="50" require>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message" maxlength="500" require></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Send Message" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-md-5 p-4 py-5 img">
+									<h3>Contact information</h3>
+									<p class="mb-4">We're open for any suggestion or just to have a chat</p>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-map-marker"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Address:</span> NH 8, GETCO, Near Biltech,Village: Dhamdod, Kosamba,Dist.: Surat - 394125,Gujarat.</p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-phone"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-paper-plane"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@ppsu.ac.in</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-globe"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+					          </div>
+				          </div>
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+                </div>
+            </section>
+                
 
             <!-- footer begin -->
       <?php

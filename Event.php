@@ -165,7 +165,7 @@
 
     body{
         font-family: 'Poppins', sans-serif;
-        font-weight: 300;
+        font-weight: 400;
         font-size: .95rem;
         line-height: 1.55;
         color: #f1f1f1;
@@ -683,7 +683,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
+        margin-top:-150px;
         height: 100vh;
         overflow: hidden;
     }
@@ -1739,7 +1739,7 @@
             /* opacity: 0; */
         }
         .content__inner {
-            background-color: #111;
+            background-color: none;
         }
     }
 
@@ -1813,11 +1813,12 @@
 
         header {
         width: 100%;
-        height: 80px;
+        height: 70px;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 999999;
+        color:#18191b;  
         
         -webkit-transition: height 0.3s;
         -moz-transition: height 0.3s;
@@ -1875,7 +1876,7 @@
 
         header
         {
-            background-color: black !important;
+            background-color: #18191b !important;
             /* opacity: 0.8; */
         }
         
@@ -2202,10 +2203,10 @@
         }
         
         #mainmenu {
-        font-family:"Open Sans", Arial, Helvetica, sans-serif;
+        /* font-family:"Montserrat',Arial, Helvetica, sans-serif"; */
         float: right;
         font-size:11px;
-        font-weight:400;
+        font-weight:bold;
         letter-spacing:3px;
         text-transform:uppercase;
         }   
@@ -2240,6 +2241,7 @@
         text-decoration: none;
         text-align:center;
         outline:none;
+        font-weight:510
         }
         
         #mainmenu a,
@@ -2771,7 +2773,7 @@
         /* flex-direction: column; */
         /* margin-right: 400px; */
         /* font-size: 2vw; */
-        font-size: 30px;
+        font-size: 26px;
         padding: 0;
         margin-top: -50px;
         align-items: flex-start;
@@ -3755,7 +3757,7 @@
                             </header> -->
                     
                                 
-                            <div class="content">
+                            <div class="content" style="padding-bottom :100px;">
                                         <nav class="menu">
                                             <a href="#" class="menu__item">Technical<div class="empty-space">-</div>Event</a>
                                             <a href="#" class="menu__item">Partial <div class="empty-space">-</div>Technical<div class="empty-space">-</div>Event</a>
