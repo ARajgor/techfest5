@@ -110,6 +110,11 @@ session_destroy();
                             <div class="btn-box">
                                 <button type="submit" id="next1">LogIn</button>
                             </div>
+                            <div class="btn-box">
+                                <a href="sign_up.php">
+                                <button type="button" id="next1">Sign Up</button>
+                                </a>
+                            </div>
                         </form>
 
                         <!-- <form id="form2">
