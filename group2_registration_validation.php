@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
                     echo '<script type ="text/JavaScript">
                     alert("'.$uid_member2.' not exist")
-                    window.location = "group2_registration.php?event='.$event.'"
+                    window.location = "index.php";
                    </script>'; 
                    $flag_verified = 1;
                 }
@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             {
                 echo '<script type ="text/JavaScript">
                 alert("No event remaining in '.$uid_leader.'\'s wallet")
-                window.location = "group2_registration.php?event='.$event.'"
+                window.location = "index.php";
                </script>'; 
                $flag_verified = 1;
 
@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
                     echo '<script type ="text/JavaScript">
                     alert("No event remaining in '.$uid_member2.'\'s wallet")
-                    window.location = "group2_registration.php?event='.$event.'"
+                    window.location = "index.php";
                    </script>'; 
                    $flag_verified = 1;
     

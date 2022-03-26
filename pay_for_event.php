@@ -10,6 +10,18 @@
         font-size: 28px;
         font-weight: bold;
     }
+    button
+    {
+        background-color:#8e04d9;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        color:white;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
     #h{
         color:white;
         font-weight:bold;
@@ -34,6 +46,7 @@
             opacity : 0.9;
             padding-top : 2px;
             padding-bottom : 25px;
+            margin-bottom : 0px;
         }
 
 </style>
@@ -173,8 +186,8 @@ $json = json_encode($data);
     </div>
     </center>
 
-<center>
-<form action="verify_for_event.php" method="POST" class="mx-3" id="form">
+    <center>
+    <form action="verify_for_event.php" method="POST" class="mx-3" id="form">
   <script
     src="https://checkout.razorpay.com/v1/checkout.js"
     data-key="<?php echo $data['key']?>"
@@ -195,7 +208,20 @@ $json = json_encode($data);
   </script>
   <!-- Any extra fields to be submitted with the form but not sent to Razorpay -->
   <input type="hidden" name="shopping_order_id" value="3456">
-</form>
+    </form>
+    <div class="container my-3" style="opacity:0.9">
+        <form action="direct_event_purchased.php" method="post">
+            <h3 style="color:white">
+                OR
+            </h3>
+            <input type="text" name="unique_code" id="uc" placeholder="Enter Unique Code" maxlength="10" style="background-color:white; font-size: 15px; margin-bottom:10px; color:black" required><br>
+            <input type="text" name="team_code" id="tc" placeholder="Enter Promotion Team Code" maxlength="10" style="background-color:white; font-size: 15px; margin-bottom:10px; color:black" required><br>
+
+            <button type="submit">
+                Pay Cash To Our Team.
+            </button>
+        </form>
+    </div>
 </div>
 </center>
 </div>

@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <!-- Title Page-->
     <title>Registration</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css_files/registration_form_css.css">
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css2/main.css" rel="stylesheet" media="all">
 </head>
 <?php
 session_start();
@@ -58,160 +75,118 @@ else
 }
 
 ?>
-<style>
-    body {
-    background-image: url('images-event/bg/3.jpg');
-    background-repeat:no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-#div1 {
-    opacity: 1;
-}
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-}
 
-.registration-form {
-    padding: 50px 0;
-}
-
-.registration-form form {
-    background-color: #191C24;
-    max-width: 600px;
-    margin: auto;
-    padding: 50px 70px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
-}
-
-#image {
-    font-size: 40px;
-    color: white;
-    height: 110px;
-    width: 110px;
-}
-
-.registration-form .item {
-    border-radius: 20px;
-    margin-bottom: 25px;
-    padding: 10px 20px;
-}
-
-.registration-form .register {
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #8e04d9;
-    border: none;
-    color: white;
-    margin-top: 20px;
-}
-
-#p1 {
-    text-align: center;
-    font-size: small;
-    font-style: italic;
-}
-
-#p2 {
-    text-align: left;
-    font-size: medium;
-}
-
-p {
-    text-align: center;
-    font-size: large;
-}
-
-.form-group {
-    color: #495057;
-}
-
-strong {
-    color: #8e04d9;
-}
-
-@media (max-width: 456px) {
-    .registration-form form {
-        padding: 50px 20px;
-    }
-    .registration-form .form-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
-        line-height: 70px;
-    }
-}
-</style>
 <body>
-    <div class="registration-form" id="div1">
-        <form action="group4_registration_validation.php" method="post">
-            <div class="form-group">
-                <center>
-                <img src="img/ppsu_logo.png" alt="something wrong" id="image">
-                </center>
-            </div>
-            <div class="form-group">
-                    <p>
-                     <h3>
-                     <strong>
-                         <center>
-                         <?php echo $event ?>
-                         </center>
-                    </strong>
-                     </h3>
-                    </p>
-            </div>
-            <div>
-                <p id="p2">
-                    <strong>
-                        <center>
-                            Select Your Team Member
-                        </center>
-                    </strong>
-                </p>
-            </div>
-            <div>
-                <p id="p2">
-                    <strong>
-                        Member 2
-                    </strong>
-                </p>
-                <div class="form-group">
-                    <input type="text" name="uid_member2" class="form-control item" id="userid member2" placeholder="User id" maxlength="20">
-                </div>
-                <p id="p2">
-                    <strong>
-                        Member 3
-                    </strong>
-                </p>
-                <div class="form-group">
-                    <input type="text" name="uid_member3" class="form-control item" id="userid member3" placeholder="User id" maxlength="20">
-                </div>
-                <p id="p2">
-                    <strong>
-                        Member 4
-                    </strong>
-                </p>
-                <div class="form-group">
-                    <input type="text" name="uid_member4" class="form-control item" id="userid member4" placeholder="User id" maxlength="20">
-                </div>
-                <div class="form-group">
-                <input type="hidden" name="event" value="<?php echo $event ?>">
-                </div>
-                </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-block register" id="submit">
-                    Register
-                </button>
-            </div>
-        </form>
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <div class="container">
+                        <form action="group4_registration_validation.php" method="post" id="form1">
+                            <h3><?php echo $event ?></h3><br>
+                            <h3>
+                                Enter User Id Of Group Member
+                            </h3>
+                            <br>
+                            <input type="text" name="uid_member2" placeholder="User Id" maxlength="20">
+                            <br>
+                            <input type="text" name="uid_member3" placeholder="User Id" maxlength="20">
+                            <br>
+                            <input type="text" name="uid_member4" placeholder="User Id" maxlength="20">
+                            <input type="hidden" name="event" value="<?php echo $event ?>">
+
+                            <div class="btn-box">
+                                <button type="submit" id="next1">Register</button>
+                            </div>
+                        </form>
+
+                        <!-- <form id="form2">
+        <h3>Contact Details</h3><br>
+        <input type="mail" placeholder="Email" required>
+        <input type="phone" placeholder="Mobile No." required>
+
+        <div class="btn-box">
+            <button type="button" id="back1">Back</button>
+            <button type="button" id="next2">Next</button>
+        </div>
+    </form>
+
+    <form id="form3">
+        <h3>Create Password</h3><br>
+        <input type="password" placeholder="Create Password" required>
+        <input type="password" placeholder="Confirm Password." required>
+
+        <div class="btn-box">
+            <button type="button" id="back2">Back</button>
+            <button type="button">Submit</button>
+        </div>
+    </form>
+
+    <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>Step 1</small></div>
+        <div class="step-col"><small>Step 2</small></div>
+        <div class="step-col"><small>Step 3</small></div>
     </div>
+    </div>
+
+    <script type="text/javascript">
+        var form1=document.getElementById("form1");
+        var form2=document.getElementById("form2");
+        var form3=document.getElementById("form3");
+
+        var next1=document.getElementById("next1");
+        var next2=document.getElementById("next2");
+        var back1=document.getElementById("back1");
+        var back2=document.getElementById("back2");
+
+        var progress=document.getElementById("progress");
+
+
+        next1.onclick=function(){
+            form1.style.left="-450px"
+            form2.style.left="40px"
+            progress.style.width="240px"
+        }
+
+        back1.onclick=function(){
+            form1.style.left="40px"
+            form2.style.left="450px"
+            progress.style.width="120px"
+        }
+
+        next2.onclick=function(){
+            form2.style.left="-450px"
+            form3.style.left="40px"
+            progress.style.width="360px"
+        }
+
+        back2.onclick=function(){
+            form2.style.left="40px"
+            form3.style.left="450px"
+            progress.style.width="240px"
+        }
+
+
+    </script>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+                        <!-- Jquery JS-->
+                        <script src="vendor/jquery/jquery.min.js"></script>
+                        <!-- Vendor JS-->
+                        <script src="vendor/select2/select2.min.js"></script>
+                        <script src="vendor/datepicker/moment.min.js"></script>
+                        <script src="vendor/datepicker/daterangepicker.js"></script>
+
+                        <!-- Main JS-->
+                        <script src="js/global.js"></script>
+
 </body>
 </html>

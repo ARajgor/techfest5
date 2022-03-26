@@ -10,6 +10,18 @@
         font-size: 28px;
         font-weight: bold;
     }
+    button
+    {
+        background-color:#8e04d9;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        color:white;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
     #h{
         color:white;
         font-weight:bold;
@@ -34,6 +46,8 @@
             opacity : 0.9;
             padding-top : 2px;
             padding-bottom : 25px;
+            margin-bottom : 0px;
+
         }
 
 </style>
@@ -58,9 +72,17 @@ if(isset($_SESSION['logged_in']))
         $result = mysqli_query($connect, $sql);
         $sql = "SELECT * FROM `premium_package_purchased` WHERE user_id='$user_name'";
         $result2 = mysqli_query($connect, $sql);
+        $sql = "SELECT * FROM `package_purchased_on_cash` WHERE user_id='$user_name'";
+        $result3 = mysqli_query($connect, $sql);
+        $sql = "SELECT * FROM `premium_package_purchased_on_cash` WHERE user_id='$user_name'";
+        $result4 = mysqli_query($connect, $sql);
+
+        $row3 = mysqli_num_rows($result3);
+        $row4 = mysqli_num_rows($result4);
         $row2 = mysqli_num_rows($result2);
         $row = mysqli_num_rows($result);
-        if($row == 1 || $row2 == 1)
+
+        if($row == 1 || $row2 == 1 || $row3 == 1 || $row4 == 1)
         {
             echo '<script type ="text/JavaScript">
             alert("You Have Already Purchased a package / premium package")
@@ -250,6 +272,19 @@ $json = json_encode($data);
   <!-- Any extra fields to be submitted with the form but not sent to Razorpay -->
   <input type="hidden" name="shopping_order_id" value="3456">
 </form>
+<div class="container my-3" style="opacity:0.9">
+        <form action="direct_package_purchased.php" method="post">
+            <h3 style="color:white">
+                OR
+            </h3>
+            <input type="text" name="unique_code" id="uc" placeholder="Enter Unique Code" maxlength="10" style="background-color:white; font-size: 15px; margin-bottom:10px; color:black" required><br>
+            <input type="text" name="team_code" id="tc" placeholder="Enter Promotion Team Code" maxlength="10" style="background-color:white; font-size: 15px; margin-bottom:10px; color:black" required><br>
+
+            <button type="submit">
+                Pay Cash To Our Team.
+            </button>
+        </form>
+    </div>
 </div>
 </center>
 </div>

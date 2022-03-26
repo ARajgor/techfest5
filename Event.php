@@ -38,6 +38,7 @@
 	<meta name="twitter:description" content="Event Template" />
 	<meta name="twitter:image" content="http://ivang-design.com/" />
 
+
 	<!-- Mobile Specific Metas
 	================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -45,11 +46,14 @@
     <meta name="msapplication-navbutton-color" content="#212121"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="#212121"/>
 
+
 	<!-- Web Fonts 
 	================================================== -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
 	<link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
 	
+    
+
 	<!-- CSS
 	================================================== -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -58,6 +62,8 @@
 	<!-- <link rel="stylesheet" href="techfest4-master/css/style.css"> -->
 	<!-- <link rel="stylesheet" href="css/style.css"/> -->
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
+
+ 
 			
 	<!-- Favicons
 	================================================== -->
@@ -68,8 +74,9 @@
 
 	<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("");
 </script> 	
-
-
+    <?php
+    require "page_navbar.php";
+    ?>
     <!-- CSS Files
     ================================================== -->
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
@@ -105,9 +112,6 @@
 	<!-- custom font -->
 	<link rel="stylesheet" href="css/font-style.css" type="text/css">
 
-    <?php
-    require "page_navbar.php";
-    ?>
 </head>
 
 <style>

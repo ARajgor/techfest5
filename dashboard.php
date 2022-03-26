@@ -124,9 +124,17 @@ else
             $result = mysqli_query($connect, $sql);
             $sql = "SELECT * FROM `premium_package_purchased` WHERE user_id='$user'";
             $result2 = mysqli_query($connect, $sql);
+            $sql = "SELECT * FROM `package_purchased_on_cash` WHERE user_id='$user'";
+            $result3 = mysqli_query($connect, $sql);
+            $sql = "SELECT * FROM `premium_package_purchased_on_cash` WHERE user_id='$user'";
+            $result4 = mysqli_query($connect, $sql);
+    
+            $row3 = mysqli_num_rows($result3);
+            $row4 = mysqli_num_rows($result4);
             $row2 = mysqli_num_rows($result2);
             $row = mysqli_num_rows($result);
-            if($row == 1 || $row2 == 1)
+    
+            if($row == 1 || $row2 == 1 || $row3 == 1 || $row4 == 1)
             {
                 echo '    <div class="container my-3">
                 <h3 id="h">
